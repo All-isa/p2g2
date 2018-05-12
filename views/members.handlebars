@@ -17,7 +17,7 @@
         <a class="nav-link" href="/signup">Register</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/login">Log In</a>
+        <a class="nav-link" href="/logout">Log Out</a>
       </li>
     </ul>
   </div>
@@ -28,6 +28,53 @@
       <h2>Welcome
         <span class="member-name"></span>
       </h2>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link" id="profile-link" >Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="strengths-link" >Strengths</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" id="portfolio-link" >Portfolio</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body d-none" id="profile">
+      <h1>add pic of yourself and things</h1>
+    </div>
+    <div class="card-body d-none" id="strengths">
+      <h1>categories list</h1>
+    </div>
+    <div class="card-body" id="portfolio">
+      <div class="row">
+        <div class="col">
+          <img class="card-img" src="http://via.placeholder.com/450x450" alt="Card image cap">
+        </div>
+        <div class="col">
+          <img class="card-img" src="http://via.placeholder.com/450x450" alt="Card image cap">
+        </div>
+        <div class="col">
+          <img class="card-img" src="http://via.placeholder.com/450x450" alt="Card image cap">
+        </div>
+      </div>
+      <div class="input-group">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="inputGroupFile04">
+          <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+        </div>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button">Upload</button>
+        </div>
       </div>
     </div>
   </div>
+</div>
