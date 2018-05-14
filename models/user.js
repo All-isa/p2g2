@@ -36,7 +36,36 @@ module.exports = function (sequelize, DataTypes) {
     strengths: {
       type: DataTypes.STRING
     },
-    
+    portfolio_1: {
+      type: DataTypes.STRING
+    },
+    portfolio_2: {
+      type: DataTypes.STRING
+    },
+    portfolio_3: {
+      type: DataTypes.STRING
+    },
+    portfolio_4: {
+      type: DataTypes.STRING
+    },
+    portfolio_5: {
+      type: DataTypes.STRING
+    },
+    portfolio_6: {
+      type: DataTypes.STRING
+    },
+    portfolio_7: {
+      type: DataTypes.STRING
+    },
+    portfolio_8: {
+      type: DataTypes.STRING
+    },
+    portfolio_9: {
+      type: DataTypes.STRING
+    },
+    portfolio_10: {
+      type: DataTypes.STRING
+    }
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
   User.prototype.validPassword = function (password) {
