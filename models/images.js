@@ -12,8 +12,5 @@ module.exports = function (sequelize, DataTypes) {
 return Image;
 };
 
-var Ariza = {
-    img: fs.readFileSync("./models/Ariza.jpg"),
-    file_name: 'Ariza'
-};
+
 
