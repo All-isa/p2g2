@@ -2,6 +2,8 @@
 var db = require("../models");
 var passport = require("../config/passport");
 
+
+
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -59,6 +61,7 @@ module.exports = function(app) {
     }
   });
 
+
   app.get("/api/search/:category", function(req, res) {
     console.log(req.body);
     db.User.findAll({
@@ -70,5 +73,4 @@ module.exports = function(app) {
       res.json(users);
     });
   });
-
 };
