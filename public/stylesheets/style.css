@@ -2,3 +2,14 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+label input {
+  display: none;
+}
+label img {
+  border: 2px solid transparent;
+}
+label input:checked + img {
+  opacity: .7;
+  border: 2px solid rgb(70, 17, 17);
+}
