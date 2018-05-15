@@ -14,6 +14,7 @@ $(document).ready(function() {
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
+    
     event.preventDefault();
     var userData = {
       email: emailInput.val().trim(),
@@ -41,6 +42,7 @@ $(document).ready(function() {
     stateInput.val("");
     cityInput.val("");
     zipInput.val("");
+
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
@@ -66,4 +68,5 @@ $(document).ready(function() {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
+  $( "#signup" ).submit();
 });

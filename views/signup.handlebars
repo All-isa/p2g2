@@ -1,75 +1,103 @@
+{{#if user}}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">P2G2</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/about">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/signup">Register</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/login">Log In</a>
-            </li>
-        </ul>
-    </div>
+  <a class="navbar-brand" href="#">P2G2</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse d-none" id="navbarSupportedContent">
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/members">Settings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Log Out</a>
+      </li>
+    </ul>
+  </div>
 </nav>
-  <div class="container center">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <form class="signup">
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <input type="text" class="form-control" id="name-input" placeholder="Full Name">
-            </div>
-            <div class="form-group col-md-6">
-              <input type="tel" class="form-control" id="number-input" placeholder="Phone Number">
-            </div>
+{{else}}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">P2G2</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse d-none" id="navbarSupportedContent">
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signup">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Log In</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{{/if}}
+<div class="container center">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <form class="signup" id="signup">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" id="name-input" placeholder="Full Name">
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <input type="email" class="form-control" id="email-input" placeholder="Email">
-            </div>
-            <div class="form-group col-md-6">
-              <input type="password" class="form-control" id="password-input" placeholder="Password">
-            </div>
+          <div class="form-group col-md-6">
+            <input type="tel" class="form-control" id="number-input" placeholder="Phone Number">
           </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
+          </div>
+          <div class="form-group col-md-6">
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group">
+
+          <input type="text" class="form-control" id="shop-name-input" placeholder="Shop Name">
+        </div>
+        <div class="form-group">
           <div class="form-group">
 
-            <input type="text" class="form-control" id="shop-name-input" placeholder="Shop Name">
+            <input type="text" class="form-control" id="address-input" placeholder="1234 Main St">
           </div>
-          <div class="form-group">
-            <div class="form-group">
-
-              <input type="text" class="form-control" id="address-input" placeholder="1234 Main St">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="city-input" placeholder="City">
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="city-input" placeholder="City">
-              </div>
-              <div class="form-group col-md-4">
-                <input type="text" class="form-control" id="state-input" placeholder="State">
-              </div>
-              <div class="form-group col-md-2">
-                <input type="text" class="form-control" id="zip-input" placeholder="Zip">
-              </div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" id="state-input" placeholder="State">
             </div>
-            <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-              <span class="sr-only">Error:</span>
-              <span class="msg"></span>
+            <div class="form-group col-md-2">
+              <input type="text" class="form-control" id="zip-input" placeholder="Zip">
             </div>
-            <button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
-        </form> 
-        <br />
-        <p>Already a member? Log in <a href="/login">here</a></p>
+          </div>
+          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            <span class="msg"></span>
+          </div>
+          <button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
+      </form>
+      <br />
+      <p>Already a member? Log in
+        <a href="/login">here</a>
+      </p>
       </div>
     </div>
   </div>
