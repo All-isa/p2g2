@@ -23,7 +23,13 @@ module.exports = function(app) {
     db.User.create({
       email: req.body.email,
       password: req.body.password,
-      name: req.body.full_name
+      name: req.body.name,
+      number: req.body.number,
+      shopName: req.body.shopName,
+      address: req.body.address,
+      state: req.body.state,
+      city: req.body.city,
+      zip: req.body.zip
     }).then(function() {
       res.redirect(307, "/api/login");
     }).catch(function(err) {
@@ -57,5 +63,15 @@ module.exports = function(app) {
   });
 
 
-
+  app.get("/api/search/:category", function(req, res) {
+    console.log(req.body);
+    db.User.findAll({
+      where: {
+        category: req.params.category,
+        // color: req.params.color
+      }
+    }).then(function() {
+      res.json(users);
+    });
+  });
 };

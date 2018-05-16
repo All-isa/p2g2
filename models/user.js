@@ -24,6 +24,9 @@ module.exports = function (sequelize, DataTypes) {
     profile_picture: {
       type: DataTypes.STRING
     },
+    short_bio: {
+      type: DataTypes.STRING(500)
+    },
     shop_name: {
       type: DataTypes.DATE
     },
