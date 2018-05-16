@@ -37,5 +37,8 @@ module.exports = function(app) {
     res.render("about", {user: req.user});
   });
 
+  app.get("/artist", function(req, res) {
+    res.render("artist", {user: req.user});
+  });
 
 };
