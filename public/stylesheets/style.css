@@ -11,7 +11,7 @@ label img {
 }
 label input:checked + img {
   opacity: .7;
-  border: 2px solid rgb(70, 17, 17);
+  border: 2px solid rgb(204, 0, 0);
 }
 
 body{
@@ -66,7 +66,7 @@ nav {
 
 #loginBg {
   position: fixed; 
-  top: -40%; 
+  top: -30%; 
   left: -50%; 
   width: 200%; 
   height: 200%;
@@ -252,4 +252,62 @@ margin-left: unset;
 
 #phoneInfo {
   padding-top: 5px;
+}
+
+/* TRYSOMETHINGNEW */
+
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Lato', sans-serif; letter-spacing: 0px; font-size: 16px; color: #62686c; font-weight: 400; line-height: 28px; }
+h1, h2, h3, h4, h5, h6 { font-weight: 300; color: #c2b7b7; margin: 0px 0px 0px 0px; font-family: 'Lato', sans-serif; }
+h1 { font-size: 44px; }
+h2 { font-size: 38px; }
+h3 { font-size: 24px; font-weight: 400; }
+h4 { font-size: 20px; font-weight: 400; }
+h5 { font-size: 16px; font-weight: 400; }
+h6 { font-size: 12px; font-weight: 400; }
+p { margin: 0 0 20px; line-height: 1.7; font-size:13px; font-weight: 100;}
+p:last-child { margin: 0px; }
+ul, ol { }
+a { text-decoration: none; color: #62686c; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
+a:focus, a:hover { text-decoration: none; color: #f67800; }
+
+.content{padding-top:80px; padding-bottom:80px;}
+.mb40{margin-bottom:20px;}
+.team-block { margin-bottom: 20px; }
+.team-content { position: absolute; background-color: rgba(17, 24, 31, 0.8); bottom: 0px; display: inline-block; width: 100%; color: #fff; padding: 10px; }
+.team-img { position: relative; }
+.team-img img { width: 100%; }
+.team-meta { color: #9da4aa; font-weight: 400; font-size: 16px; }
+.overlay { border-radius: 0px; position: absolute; top: 0; bottom: 0; left: 0; right: 0; height: 100%; width: 100%; opacity: 0; transition: 1s ease; background-color: #11181f;     overflow-x: auto;
+  -webkit-overflow-scrolling: touch;}
+.team-img:hover .overlay { opacity: .99; }
+.team-img:hover .team-content { opacity: 0; }
+
+
+.text { color: #fff; position: absolute; top: 30%; left: 30%; transform: translate(-26%, -26%); -ms-transform: translate(-26%, -26%); right: 0; font-weight: 400; font-size: 16px; }
+.text {padding-top:70px; padding-bottom:15px;}
+
+.container {
+  -ms-overflow-style: none;  
+}
+.overlay::-webkit-scrollbar { 
+  display: none; 
+}
+/* TRYSOMETHINGNEW */
+#catFeed {
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  flex-wrap: unset;
+}
+
+#catFeed img {
+border: 0;
+}
+
+label {
+  margin-bottom: 0px;
+}
+
+label input:checked + img {
+  opacity: .3;
 }
