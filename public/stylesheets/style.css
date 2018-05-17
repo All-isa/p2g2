@@ -149,11 +149,13 @@ nav {
   -webkit-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
   -moz-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
   box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+  
 }
 .img-responsive {
   display: block;
   height: auto;
   max-width: 100%;
+  
 }
 /* END IMAGE CIRCLE */
 
@@ -203,11 +205,47 @@ nav {
   box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.12);
 }
 
-.carousel {
-  width:640px;
-  height:360px;
-}
 
 #artistRow3{
   padding: 20px 0px;
+}
+
+#artistPage {
+padding-left: 55px;
+margin-left: unset;
+}
+
+.sidebar {
+  width: 300px;
+  
+  background: rgb(240, 235, 235);
+  -webkit-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+  -moz-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+  box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+}
+
+#sidebar-padding {
+  padding:15px 25px;
+}
+
+@media (min-width: 768px) {
+ .main {
+     padding-right: 40px;
+     padding-left: 220px; /* 180 + 40 */
+ }
+}
+
+#artistName {
+  padding-top: 15px;
+}
+#img-container {
+  padding: 10px 20px 0px;
+}
+
+#pills{
+  padding-bottom:10px;
+}
+
+#carouselExampleControls {
+  padding:10px 50px;
 }
