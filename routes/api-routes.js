@@ -24,7 +24,7 @@ module.exports = function(app) {
       email: req.body.email,
       password: req.body.password,
       name: req.body.name,
-      number: req.body.number,
+      phoneNumber: req.body.number,
       shopName: req.body.shopName,
       address: req.body.address,
       state: req.body.state,

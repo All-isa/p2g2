@@ -18,20 +18,32 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    full_name: {
+    name: {
       type: DataTypes.STRING
     },
-    profile_picture: {
+    phoneNumber: {
+      type: DataTypes.STRING
+    },
+    shopName: {
+      type: DataTypes.STRING
+    },
+    address: {
+      type: DataTypes.STRING
+    },
+    state: {
+      type: DataTypes.STRING
+    },
+    city: {
+      type: DataTypes.STRING
+    },
+    zip: {
+      type: DataTypes.INTEGER
+    },
+    profilePicture: {
       type: DataTypes.STRING
     },
     short_bio: {
       type: DataTypes.STRING(500)
-    },
-    shop_name: {
-      type: DataTypes.DATE
-    },
-    phone_number: {
-      type: DataTypes.STRING
     },
     color: {
       type: DataTypes.BOOLEAN
