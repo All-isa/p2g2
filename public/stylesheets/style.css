@@ -20,6 +20,9 @@ body{
 
 nav {
   background-color: rgb(20, 18, 18);
+  -webkit-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+  -moz-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+  box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
 }
 
 .navbar-light .navbar-nav .nav-link{
@@ -100,13 +103,14 @@ nav {
 }
 
 #artistBG{
-  position: fixed; 
+  /* position: fixed; 
   top: -40%; 
   left: -48%; 
   width: 200%; 
   height: 200%;
-  z-index: -100;
-  background-color: #17161F;
+  z-index: -100; */
+  background: rgb(6,6,8);
+  background: linear-gradient(90deg, rgba(6,6,8,1) 0%, rgba(48,50,76,1) 100%);
 }
 
 #membersTabs {
@@ -119,5 +123,91 @@ nav {
 } */
 
 #artistPage {
-  color: #f7f7f7;
+  color: #242330;
+}
+
+
+/* IMAGE CIRCLE */
+.img-circle {
+  border-radius: 50%;
+}
+.img-circle {
+  border-radius: 0;
+}
+
+.ratio {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+  width: 100%;
+}
+.img-circle {
+  border-radius: 50%;
+  -webkit-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+  -moz-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+  box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+}
+.img-responsive {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+/* END IMAGE CIRCLE */
+
+/* #artistRow1{
+  background: rgb(6,6,8);
+  background: linear-gradient(90deg, rgba(6,6,8,1) 0%, rgba(48,50,76,1) 100%);
+  padding: 20px 0px;
+} */
+
+/* #artistRow1{
+  background: rgb(48,50,76);
+  background: linear-gradient(0deg, rgba(48,50,76,1) 0%, rgba(6,6,8,1) 100%);
+  padding: 20px 0px;
+} */
+
+
+#artistRow1{
+  background: rgb(226, 226, 226);
+  padding: 20px 0px;
+}
+
+#artistRow2{
+  background: rgb(240, 235, 235);
+  padding: 20px 0px;
+  -webkit-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+  -moz-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+  box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+}
+
+#contact{
+  background: rgb(226, 226, 226);
+  padding:20px;
+  -webkit-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+  -moz-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+  box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+}
+/* #artistRow2{
+  background: rgb(6,6,8);
+  background: linear-gradient(90deg, rgba(6,6,8,1) 0%, rgba(48,50,76,1) 100%);
+  padding: 20px 0px;
+} */
+
+.badge-pill {
+  background-color: #c2b7b7;
+  -webkit-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.12);
+  -moz-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.12);
+  box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.12);
+}
+
+.carousel {
+  width:640px;
+  height:360px;
+}
+
+#artistRow3{
+  padding: 20px 0px;
 }
