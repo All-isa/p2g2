@@ -8,7 +8,7 @@
                     <div class="ratio img-responsive img-circle" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI_UrA4KamQurKaNVZZmgdEjRD8A7yADqDfllUhP0T_1VZWDMI);">
                     </div>
                 </div>
-                <h2 id="artistName">First Last</h2>
+                <h2 id="artistName">{{user.name}}</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Lorem ipsum dolor sit amet.</p>
                 <div id="pills">
@@ -19,11 +19,12 @@
                 </div>
             </div>
             <div id="contact">
-                <h3 class="text-center">Shop Name</h3>
-                <h6 class="text-center">1234 Street Ln.</h6>
-                </br>
-                <h5 class="text-center">
-                    <i class="fas fa-phone"></i>&nbsp555-123-4567</h5>
+                <h3 class="text-center">{{user.shopName}}</h3>
+                <h6 class="text-center">{{user.address}}</h6>
+                <h6 class="text-center">{{user.city}},&nbsp{{user.state}}&nbsp{{user.zip}}</h6>
+                
+                <h5 id="phoneInfo" class="text-center">
+                    <i class="fas fa-phone"></i>&nbsp{{user.phoneNumber}}</h5>
             </div>
         </div>
         <div class="col justify-content-md-center">
