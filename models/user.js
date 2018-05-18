@@ -37,7 +37,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     zip: {
-      type: DataTypes.INTEGER
+      type: DataTypes.STRING
     },
     profilePicture: {
       type: DataTypes.STRING
