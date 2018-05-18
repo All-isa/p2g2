@@ -44,7 +44,7 @@ module.exports = function (sequelize, DataTypes) {
       defaultValue: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI_UrA4KamQurKaNVZZmgdEjRD8A7yADqDfllUhP0T_1VZWDMI)"
     },
     short_bio: {
-      type: DataTypes.STRING(500)
+      type: DataTypes.STRING
     },
     color: {
       type: DataTypes.BOOLEAN
