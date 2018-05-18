@@ -1,9 +1,14 @@
-
 <div class="content">
     <div class="container">
+
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb40 text-center">
-                <h1>Select A Category</h1> 
+                <h1>Artist Search</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-left">
+                <h5>Select Your Prefences</h5>
             </div>
         </div>
         <div class="row" id="catFeed">
@@ -12,7 +17,7 @@
                 <!-- team-img -->
                 <label>
                     <div class="card">
-                        <input class="single-checkbox" type="checkbox" name="category" value="1">
+                        <input class="single-checkbox" type="radio" name="category" value="1">
                         <img class="card-img-top" src="/images/icons/amerTrad-sm.jpg" alt="American Traditional">
                     </div>
                 </label>
@@ -22,7 +27,7 @@
                 <!-- team-img -->
                 <label>
                     <div class="card">
-                        <input class="single-checkbox" type="checkbox" name="category" value="1">
+                        <input class="single-checkbox" type="radio" name="category" value="1">
                         <img class="card-img-top" src="/images/icons/lettering-sm.jpg">
                     </div>
                 </label>
@@ -32,7 +37,7 @@
                 <!-- team-img -->
                 <label>
                     <div class="card">
-                        <input class="single-checkbox" type="checkbox" name="category" value="1">
+                        <input class="single-checkbox" type="radio" name="category" value="1">
                         <img class="card-img-top" src="/images/icons/newSchool-sm.jpg">
                     </div>
                 </label>
@@ -42,7 +47,7 @@
                 <!-- team-img -->
                 <label>
                     <div class="card">
-                        <input class="single-checkbox" type="checkbox" name="category" value="1">
+                        <input class="single-checkbox" type="radio" name="category" value="1">
                         <img class="card-img-top" src="/images/icons/realism-sm.jpg">
                     </div>
                 </label>
@@ -52,7 +57,7 @@
                 <!-- team-img -->
                 <label>
                     <div class="card">
-                        <input class="single-checkbox" type="checkbox" name="category" value="1">
+                        <input class="single-checkbox" type="radio" name="category" value="1">
                         <img class="card-img-top" src="/images/icons/watercolor-sm.jpg">
                     </div>
                 </label>
@@ -62,7 +67,7 @@
                 <!-- team-img -->
                 <label>
                     <div class="card">
-                        <input class="single-checkbox" type="checkbox" name="category" value="1">
+                        <input class="single-checkbox" type="radio" name="category" value="1">
                         <img class="card-img-top" src="/images/icons/port-sm.jpg">
                     </div>
                 </label>
@@ -72,31 +77,54 @@
                 <!-- team-img -->
                 <label>
                     <div class="card">
-                        <input  class="single-checkbox" type="checkbox" name="category" value="1">
+                        <input class="single-checkbox" type="radio" name="category" value="1">
                         <img class="card-img-top" src="/images/icons/blackwork-sm.jpg">
                     </div>
                 </label>
             </div>
-                        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
                 <!-- team-img -->
                 <label>
                     <div class="card">
-                        <input  class="single-checkbox" type="checkbox" name="category" value="1">
+                        <input class="single-checkbox" type="radio" name="category" value="1">
                         <img class="card-img-top" src="/images/icons/geometric-sm.jpg">
                     </div>
                 </label>
             </div>
-                        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
                 <!-- team-img -->
                 <label>
                     <div class="card">
-                        <input  class="single-checkbox" type="checkbox" name="category" value="1">
+                        <input class="single-checkbox" type="radio" name="category" value="1">
                         <img class="card-img-top" src="/images/icons/illustrative-sm.jpg">
                     </div>
                 </label>
             </div>
-
-
         </div>
+        <div class="row align-middle">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb40 text-center searchrow2">
+                <div class="radioSelect">
+                    <label>
+                        <input type="radio" class="radio-inline" name="radios" value="1">
+                        <span class="outside">
+                            <span class="inside"></span>
+                        </span>Color</label>
+                    <label>
+                        <input type="radio" class="radio-inline" name="radios" value="2">
+                        <span class="outside">
+                            <span class="inside"></span>
+                        </span>Black & White</label>
+                    <label>
+                        <input type="radio" class="radio-inline" name="radios" value="3">
+                        <span class="outside">
+                            <span class="inside"></span>
+                        </span>Either</label>
+                </div>
+            </div>
+            <div id="searchSubmitContainer" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 text-center">
+                <button id="searchSubmit" type="submit" class="btn btn-lg btn-block">Search</button>
+            </div>
+        </div>
+
     </div>
 </div>
