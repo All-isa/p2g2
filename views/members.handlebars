@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-      <h1 id="welcomeMess">Welcome, {{user.name}}! Please tell us more about your practice so we can pair you with the perfect clients.
-        {{!-- <span class="member-name"></span> --}}
+      <h1 id="welcomeMess">Welcome, {{user.name}}! Please tell us more about your practice so we can pair you with the perfect clients. {{!--
+        <span class="member-name"></span> --}}
       </h1>
     </div>
   </div>
@@ -35,23 +35,33 @@
     </div>
 
     <div class="card-body " id="profile">
-      <h4 class="dark">Add A Profile Picture</h4>
-      <div class="input-group mb-3">
-        <div class="custom-file">
-          <input type="file" class="custom-file-input" id="inputGroupFile02">
-          <label class="custom-file-label" for="inputGroupFile02">
-            <span id="profilePicTemp">Choose file</span>
-          </label>
+      <div class="row">
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+          <div id="img-container">
+            <div class="ratio img-responsive img-circle" style="background-image: url({{user.profilePicture}};">
+            </div>
+          </div>
         </div>
-        {{!--
-        <div class="input-group-append">
-          <span class="input-group-text" id="">Upload</span>
-        </div> --}}
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="inputGroupFile02">Upload</button>
+        <div class="col-xl-10 col-lg-10 col-md-6 col-sm-12 col-12 topmargin">
+          <h4 class="dark">Add A Profile Picture</h4>
+          <div class="input-group mb-3">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile02">
+              <label class="custom-file-label" for="inputGroupFile02">
+                <span id="profilePicTemp">Choose file</span>
+              </label>
+            </div>
+            {{!--
+            <div class="input-group-append">
+              <span class="input-group-text" id="">Upload</span>
+            </div> --}}
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="inputGroupFile02">Upload</button>
+            </div>
+          </div>
         </div>
       </div>
-      <h4 class="dark">Add A Short Bio</h4>
+      <h4 class="dark topmargin">Add A Short Bio</h4>
       <div class="form" id="moveSave2">
         <div class="form-group">
           <textarea class="form-control" id="shortBio" rows="5"></textarea>
