@@ -551,3 +551,14 @@ form.signup {
 .badge-pill {
   background-color: #b3b3b3;
 }
+
+.space{
+  padding: 8px 0px;
+}
+
+.resultsBG {
+  background-color: #62686c;
+  padding:15px 0px;
+  border-radius: 5px;
+  margin-bottom:10px;
+}
