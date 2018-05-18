@@ -42,4 +42,15 @@ $(document).ready(function() {
     
   });
 
+  $( "#bioSave" ).on( "click", function() {
+    var bio = $("#shortBio").val().trim();
+    $.ajax("/api/bio/" + artist.id, {
+      type: "PUT",
+      data: {short_bio: bio}
+    }).then(function(data){
+      console.log(data);
+    });
+    
+  });
+
 });

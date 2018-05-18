@@ -63,6 +63,14 @@ $(document).ready(function () {
           image_url = url;
           console.log(url);
           //enter .post request here to send url to backend
+          $.ajax("/api/profilePic/" + artist.id, {
+            type: "PUT",
+            data: {
+              profilePicture: url
+            }
+          }).then(function (data) {
+            console.log("Profile picture submitted to database");
+          });
 
         });
       }
@@ -116,43 +124,43 @@ $(document).ready(function () {
           //enter .post request here to send url to backend
           var test = false;
           // var picAddress = "artist.portfolio_" + i;
-          if (artist.portfolio_1 == null && test == false) {
+          if (artist.portfolio_1 === "http://via.placeholder.com/550x350" && test == false) {
             artist.portfolio_1 = url;
             console.log(artist.portfolio_1);
             test = true
-          } else if (artist.portfolio_2 == null && test == false) {
+          } else if (artist.portfolio_2 === "http://via.placeholder.com/550x350" && test == false) {
             artist.portfolio_2 = url;
             console.log(artist.portfolio_2);
             test = true
-          } else if (artist.portfolio_3 == null && test == false) {
+          } else if (artist.portfolio_3 === "http://via.placeholder.com/550x350" && test == false) {
             artist.portfolio_3 = url;
             console.log(artist.portfolio_3);
             test = true
-          } else if (artist.portfolio_4 == null && test == false) {
+          } else if (artist.portfolio_4 === "http://via.placeholder.com/550x350" && test == false) {
             artist.portfolio_4 = url;
             console.log(artist.portfolio_4);
             test = true
-          } else if (artist.portfolio_5 == null && test == false) {
+          } else if (artist.portfolio_5 === "http://via.placeholder.com/550x350" && test == false) {
             artist.portfolio_5 = url;
             console.log(artist.portfolio_5);
             test = true;
-          } else if (artist.portfolio_6 == null && test == false) {
+          } else if (artist.portfolio_6 === "http://via.placeholder.com/550x350" && test == false) {
             artist.portfolio_6 = url;
             console.log(artist.portfolio_6);
             test = true;
-          } else if (artist.portfolio_7 == null && test == false) {
+          } else if (artist.portfolio_7 === "http://via.placeholder.com/550x350" && test == false) {
             artist.portfolio_7 = url;
             console.log(artist.portfolio_7);
             test = true;
-          } else if (artist.portfolio_8 == null && test == false) {
+          } else if (artist.portfolio_8 === "http://via.placeholder.com/550x350" && test == false) {
             artist.portfolio_8 = url;
             console.log(artist.portfolio_8);
             test = true;
-          } else if (artist.portfolio_9 == null && test == false) {
+          } else if (artist.portfolio_9 === "http://via.placeholder.com/550x350" && test == false) {
             artist.portfolio_9 = url;
             console.log(artist.portfolio_9);
             test = true;
-          } else if (artist.portfolio_10 == null && test == false) {
+          } else if (artist.portfolio_10 === "http://via.placeholder.com/550x350" && test == false) {
             artist.portfolio_10 = url;
             console.log(artist.portfolio_10);
             test = true;
@@ -176,7 +184,7 @@ $(document).ready(function () {
             }
           }).then(function (data) {
             console.log(data);
-          })
+          });
           // .catch(function(err){
           // console.log(err);
           // });

@@ -38,6 +38,7 @@ module.exports = function(app) {
   });
 
   app.get("/artist", function(req, res) {
+    console.log("Artist API result is " + req.user);
     res.render("artist", {user: req.user});
   });
 
