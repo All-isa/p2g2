@@ -37,10 +37,11 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     zip: {
-      type: DataTypes.INTEGER
+      type: DataTypes.STRING
     },
     profilePicture: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI_UrA4KamQurKaNVZZmgdEjRD8A7yADqDfllUhP0T_1VZWDMI)"
     },
     short_bio: {
       type: DataTypes.STRING(500)
@@ -52,34 +53,44 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     portfolio_1: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: "http://via.placeholder.com/550x350"
     },
     portfolio_2: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: "http://via.placeholder.com/550x350"
     },
     portfolio_3: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: "http://via.placeholder.com/550x350"
     },
     portfolio_4: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: "http://via.placeholder.com/550x350"
     },
     portfolio_5: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: "http://via.placeholder.com/550x350"
     },
     portfolio_6: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: "http://via.placeholder.com/550x350"
     },
     portfolio_7: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: "http://via.placeholder.com/550x350"
     },
     portfolio_8: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: "http://via.placeholder.com/550x350"
     },
     portfolio_9: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: "http://via.placeholder.com/550x350"
     },
     portfolio_10: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: "http://via.placeholder.com/550x350"
     }
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
