@@ -158,6 +158,7 @@ module.exports = function (app) {
         email: req.user.email,
         id: req.user.id,
         name: req.user.full_name,
+        short_bio: req.body.short_bio,
         profilePicture: req.body.profilePicture,
         portfolio_1: req.user.portfolio_1,
         portfolio_2: req.user.portfolio_2,
@@ -179,7 +180,7 @@ module.exports = function (app) {
     db.User.findAll({
       where: {
         category: req.params.category,
-        // color: req.params.color
+        color: req.params.color
       }
     }).then(function () {
       res.json(users);
