@@ -84,15 +84,24 @@ $(document).ready(function () {
   // });
   var strengthsArr = [];
   var strengths = [];
+  var radio;
   $("#saveStrengths").on("click", function () {
     event.preventDefault();
     strengths = $("[name='category2']");
+    radio = $("[name='radios']");
+    console.log(radio);
 
     $.each(strengths, function (index, element) {
       if (element.checked === true) {
         strengthsArr.push(element.id);
       }
-    })
+    });
+
+    $.each(radio, function (index, element) {
+      if (element.checked === true) {
+        radio = element.value ;
+      }
+    });
     // strengthsArr.push(strengths);
     // strengthsArr = strengths.filter(":checked").map(function() {
     //   return this.value;
@@ -101,7 +110,8 @@ $(document).ready(function () {
     $.ajax("/api/strengths/" + artist.id, {
       type: "PUT",
       data: {
-        strengths: JSON.stringify(strengthsArr)
+        radio: radio,
+        categories: strengthsArr
       }
     }).then(function (data) {
       console.log(data);
