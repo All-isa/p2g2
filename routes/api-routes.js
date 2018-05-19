@@ -95,8 +95,10 @@ module.exports = function (app) {
         where: {
           id: req.params.id
         }
-      }).then(function (dbartist) {
+      }).then(function () {
         console.log("success");
+      req.session.passport.user.short_bio = req.body.short_bio;
+        req.session.save(function (err) { console.log(err); })
         res.sendStatus(200);
       }).catch(function (err) {
         console.log(err);
