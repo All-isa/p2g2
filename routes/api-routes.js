@@ -163,7 +163,7 @@ module.exports = function (app) {
     }
   });
 
-  app.get("/artist", function (req, res) {
+  app.get("/api/artist/:id", function (req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
