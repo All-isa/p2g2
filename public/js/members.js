@@ -61,8 +61,18 @@ $(document).ready(function() {
       window.location.replace(data);
     });
 
-  });
+    $("#strengths").on( "click", function() {
+      var style = $("#strengths").val().trim();
+      console.log(strengths);
+      $.ajax("/api/bio/" + artist.id, {
+        type: "PUT",
+        data: {strengths: strengths}
+      }).then(function(data){
+        console.log(data);
+      });
 
+  });
+});
 //get route to update image and bio information on click of "save"
 //callback function
 

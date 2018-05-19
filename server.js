@@ -38,3 +38,14 @@ db.sequelize.sync({force:true}).then(function () {
         console.log("Server listening on: http://localhost:" + PORT);
     });
   });
+
+// if (process.env.JAWSDB) {
+//     connection = mysql.createConnection(process.env.JAWSDB_URL);
+// } else {
+//     connection = mysql.createConnection({
+//         host: 'localhost',
+//         user: 'root',
+//         password: 'password',
+//         database: 'artist'
+//     });
+// };
