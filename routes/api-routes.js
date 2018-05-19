@@ -68,8 +68,19 @@ module.exports = function (app) {
           id: req.params.id
         }
       }).then(function (dbartist) {
-        console.log("success");
+        req.session.passport.user.portfolio_1 = req.body.portfolio_1;
+        req.session.passport.user.portfolio_2 = req.body.portfolio_2;
+        req.session.passport.user.portfolio_3 = req.body.portfolio_3;
+        req.session.passport.user.portfolio_4 = req.body.portfolio_4;
+        req.session.passport.user.portfolio_5 = req.body.portfolio_5;
+        req.session.passport.user.portfolio_6 = req.body.portfolio_6;
+        req.session.passport.user.portfolio_7 = req.body.portfolio_7;
+        req.session.passport.user.portfolio_8 = req.body.portfolio_8;
+        req.session.passport.user.portfolio_9 = req.body.portfolio_9;
+        req.session.passport.user.portfolio_10 = req.body.portfolio_10;
+        req.session.save(function (err) { console.log(err); })
         res.sendStatus(200);
+        console.log("success");
       }).catch(function (err) {
         console.log(err);
       });
@@ -89,6 +100,7 @@ module.exports = function (app) {
         res.sendStatus(200);
       }).catch(function (err) {
         console.log(err);
+        // res.redirect("/members");
       });
   });
 
@@ -101,10 +113,15 @@ module.exports = function (app) {
         where: {
           id: req.params.id
         }
-      }).then(function (dbartist) {
+      }).then(function () {
         console.log("profile picture saved successfully");
+
+        // location.replace(data);
+        req.session.passport.user.profilePicture = req.body.profilePicture;
+        req.session.save(function (err) { console.log(err); })
         res.sendStatus(200);
       }).catch(function (err) {
+
         console.log(err);
       });
   });
