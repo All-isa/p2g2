@@ -42,8 +42,17 @@ $(document).ready(function() {
     
   });
 
+  var artist = {};
+
+  $.get("/api/user_data").then(function (data) {
+    console.log(data);
+    artist = data;
+  });
+
+
   $( "#bioSave" ).on( "click", function() {
     var bio = $("#shortBio").val().trim();
+    console.log(bio);
     $.ajax("/api/bio/" + artist.id, {
       type: "PUT",
       data: {short_bio: bio}
@@ -52,5 +61,8 @@ $(document).ready(function() {
     });
 
   });
+
+//get route to update image and bio information on click of "save"
+//callback function
 
 });
