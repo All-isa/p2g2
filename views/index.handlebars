@@ -135,20 +135,22 @@
                 <button id="searchSubmit" type="submit" class="btn btn-lg btn-block">Search</button>
             </div>
         </div>
-
+        {{#each users}}
         <div class="row resultsBG">
 
             <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12 text-center">
                 <div id="img-container">
-                    <div class="ratio img-responsive img-circle" style="background-image: url(https://www.bspmediagroup.com/event/img/logos/user_placeholder.png);">
+                    <div class="ratio img-responsive img-circle" style="background-image: url({{this.profilePicture}});">
                     </div>
                 </div>
-                <h5 class="space">{{users.0.email}}</h5>
+                <h5 class="space">{{this.name}}</h5>
                 <div class="lessDark" id="pills">
+                    {{#if this.color}}
                     <span class="badge badge-pill">Color</span>
-                    <span class="badge badge-pill">American Traditional</span>
-                    <span class="badge badge-pill">Realism</span>
-                    <span class="badge badge-pill">Lettering</span>
+                    {{else}}
+                    <span class="badge badge-pill">Black & White</span>
+                    {{/if}}
+                    <span class="badge badge-pill">{{this.strengths}}</span>
                 </div>
             </div>
 
@@ -157,7 +159,7 @@
                 <label>
                     <div class="card">
 
-                        <img class="card-img-top" src="http://via.placeholder.com/250x250">
+                        <img class="card-img-top" src="{{this.portfolio_1}}">
                     </div>
                 </label>
             </div>
@@ -167,7 +169,7 @@
                 <label>
                     <div class="card">
 
-                        <img class="card-img-top" src="http://via.placeholder.com/250x250">
+                        <img class="card-img-top" src="{{this.portfolio_2}}">
                     </div>
                 </label>
             </div>
@@ -178,15 +180,18 @@
                 <label>
                     <div class="card">
 
-                        <img class="card-img-top" src="http://via.placeholder.com/250x250">
+                        <img class="card-img-top" src="{{this.portfolio_3}}">
                     </div>
                 </label>
             </div>
 
             <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-12 ">
-                <a href="/about" class="btn btn-lg btn-block"><i class="fas fa-arrow-right"></i></a>
+                <a href="/artist/{{this.id}}" class="btn btn-lg btn-block">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
 
         </div>
+        {{/each}}
     </div>
 </div>
