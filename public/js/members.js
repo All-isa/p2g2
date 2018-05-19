@@ -58,6 +58,7 @@ $(document).ready(function() {
       data: {short_bio: bio}
     }).then(function(data){
       console.log(data);
+      window.location.replace(data);
     });
 
     $("#strengths").on( "click", function() {
