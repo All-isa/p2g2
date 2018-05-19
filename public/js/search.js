@@ -21,7 +21,7 @@ $(document).ready(function () {
         
         console.log(category);
         $.get("/api/search/" + color +"/"+ category).then(function (data) {
-            console.log(data);
+            // console.log(data);
             // data.strengths= JSON.parse(data.strengths);
             console.log(data.strengths);
             //refer to results with data.property
