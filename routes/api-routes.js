@@ -78,7 +78,7 @@ module.exports = function (app) {
         req.session.passport.user.portfolio_8 = req.body.portfolio_8;
         req.session.passport.user.portfolio_9 = req.body.portfolio_9;
         req.session.passport.user.portfolio_10 = req.body.portfolio_10;
-        req.session.save(function (err) { console.log(err); })
+        req.session.save(function (err) { console.log(err); });
         res.sendStatus(200);
         console.log("success");
       }).catch(function (err) {
@@ -98,7 +98,7 @@ module.exports = function (app) {
       }).then(function () {
         console.log("success");
       req.session.passport.user.short_bio = req.body.short_bio;
-        req.session.save(function (err) { console.log(err); })
+        req.session.save(function (err) { console.log(err); });
         res.sendStatus(200);
       }).catch(function (err) {
         console.log(err);
@@ -120,7 +120,7 @@ module.exports = function (app) {
 
         // location.replace(data);
         req.session.passport.user.profilePicture = req.body.profilePicture;
-        req.session.save(function (err) { console.log(err); })
+        req.session.save(function (err) { console.log(err); });
         res.sendStatus(200);
       }).catch(function (err) {
 
@@ -191,6 +191,23 @@ module.exports = function (app) {
     }
   });
 
+  app.put("/api/strengths/:id", function (req, res) {
+    console.log("strengths passed");
+    db.User.update({
+      strengths: req.body.strengths
+    },
+      {
+        where: {
+          id: req.params.id
+        }
+      }).then(function (dbartist) {
+        console.log("strengths");
+        res.sendStatus(200);
+      }).catch(function (err) {
+        console.log(err);
+      });
+  });
+
 
   app.get("/api/search/:color/:category", function (req, res) {
     console.log(req.body);
@@ -200,6 +217,7 @@ module.exports = function (app) {
         strengths: {like: '%' + req.params.category + '%'}
         }
     }).then(function (users) {
+
       res.json(users);
     });
   });
