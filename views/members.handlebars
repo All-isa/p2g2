@@ -24,6 +24,8 @@
             <li class="nav-item">
               <a class="nav-link" id="profile-link">Profile</a>
             </li>
+
+
           </ul>
         </div>
         <div class="col">
@@ -97,12 +99,12 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
               <div class="radioSelect">
                 <label class="dark">
-                  <input type="radio" class="radio-inline " name="radios" value="true">
+                  <input type="radio" class="radio-inline " name="radios" value="1">
                   <span class="outside">
                     <span class="inside "></span>
                   </span>Color</label>
                 <label class="dark">
-                  <input type="radio" class="radio-inline dark" name="radios" value="false">
+                  <input type="radio" class="radio-inline dark" name="radios" value="2">
                   <span class="outside">
                     <span class="inside dark"></span>
                   </span>Black & White</label>
@@ -172,7 +174,7 @@
           <!-- team-img -->
           <label>
             <div class="card">
-              <input class="single-checkbox" type="checkbox" name="category2" id="Portraiture" value="Portraiture">
+              <input class="single-checkbox" type="checkbox" name="category2" id="Portraiture" value="Porttraiture">
               <img class="card-img-top" src="/images/icons/port-sm.jpg">
             </div>
           </label>
@@ -209,27 +211,8 @@
 
       <div class="row" id="moveSave">
         <div class="container">
-          <button type="submit" class="btn btn-primary" id="saveStrengths" data-toggle="modal" data-target="#modalStrengths">Save</button>
+          <button type="submit" class="btn btn-primary" id="saveStrengths">Save</button>
         </div>
-        <!-- Modal to alert waiting period for image upload -->
-        <div class="modal fade" id="modalStrengths" role="dialog">
-          <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                {{!--
-                <button type="button" class="close" data-dismiss="modal">&times;</button> --}}
-                <h4 class="modal-title">Success</h4>
-              </div>
-              <div class="modal-body">
-                <p>
-                  <h6>Your strengths have been added to your portfolio page.</h6>
-                </p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
-            </div>
       </div>
     </div>
     
