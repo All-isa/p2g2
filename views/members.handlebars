@@ -16,13 +16,13 @@
         <div class="col">
           <ul id="membersTabs" class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
-              <a class="nav-link  active" id="profile-link">Profile</a>
+              <a class="nav-link active" id="portfolio-link">Portfolio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="strengths-link">Strengths</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="portfolio-link">Portfolio</a>
+              <a class="nav-link" id="profile-link">Profile</a>
             </li>
           </ul>
         </div>
@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <div class="card-body " id="profile">
+    <div class="card-body d-none" id="profile">
       <div class="row">
         <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
           <div id="img-container">
@@ -55,9 +55,9 @@
             <div class="input-group-append">
               <span class="input-group-text" id="">Upload</span>
             </div> --}}
-            <div class="input-group-append">
+            {{!-- <div class="input-group-append">
               <button class="btn btn-outline-secondary" type="button" id="inputGroupFile02">Upload</button>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>
@@ -84,12 +84,12 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
             </div>
-      
-    </div>
-  </div>
+
+          </div>
+        </div>
       </div>
     </div>
-    <div class="card-body d-none" id="strengths">
+    <div id="strengths" class="card-body d-none">
       <div class="row">
         <div class="col">
           <h4 class="dark">Which do you prefer to work with?</h4>
@@ -209,12 +209,33 @@
 
       <div class="row" id="moveSave">
         <div class="container">
-          <button type="submit" class="btn btn-primary" id="strengths">Save</button>
+          <button type="submit" class="btn btn-primary" id="saveStrengths" data-toggle="modal" data-target="#modalStrengths">Save</button>
         </div>
+        <!-- Modal to alert waiting period for image upload -->
+        <div class="modal fade" id="modalStrengths" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                {{!--
+                <button type="button" class="close" data-dismiss="modal">&times;</button> --}}
+                <h4 class="modal-title">Success</h4>
+              </div>
+              <div class="modal-body">
+                <p>
+                  <h6>Your strengths have been added to your portfolio page.</h6>
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
       </div>
     </div>
+    
+    
 
-    <div class="card-body d-none" id="portfolio">
+    <div class="card-body" id="portfolio">
       <div class="row mb40">
         <div class="col">
           <img class="card-img" src="{{user.portfolio_1}}" alt="Card image cap">
@@ -236,23 +257,26 @@
             <span id="tempFile">Choose file</span>
         </div>
         <!-- Modal to alert waiting period for image upload -->
-            <div class="modal fade" id="modalUpload" role="dialog">
-              <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                  <div class="modal-header">
-                    {{!-- <button type="button" class="close" data-dismiss="modal">&times;</button> --}}
-                    <h4 class="modal-title">Success</h4>
-                  </div>
-                  <div class="modal-body">
-                    <p><h6>Please wait until the image preview has loaded before you upload the next photo.</h6></p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-          </label>
+        <div class="modal fade" id="modalUpload" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                {{!--
+                <button type="button" class="close" data-dismiss="modal">&times;</button> --}}
+                <h4 class="modal-title">Success</h4>
+              </div>
+              <div class="modal-body">
+                <p>
+                  <h6>Please wait until the image preview has loaded before you upload the next photo.</h6>
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            </label>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
