@@ -239,8 +239,8 @@ module.exports = function (app) {
           strengths: { like: '%' + req.params.category + '%' }
         }
       }).then(function (users) {
-
-        res.json(users);
+        console.log(users);
+        res.render("index", {users: users});
       });
     } else {
       db.User.findAll({
@@ -250,7 +250,7 @@ module.exports = function (app) {
         }
       }).then(function (users) {
 
-        res.json(users);
+        res.render("index", {users: res.users});
       });
     };
   });
