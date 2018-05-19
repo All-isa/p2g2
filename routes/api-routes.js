@@ -209,14 +209,15 @@ module.exports = function (app) {
   });
 
 
-  app.get("/api/search/:strengths", function (req, res) {
+  app.get("/api/search/:color/:category", function (req, res) {
     console.log(req.body);
     db.User.findAll({
       where: {
-        strengths: {like: '%' + req.params.strengths + '%'} ,
-        color: {like: '%' + req.params.color + '%'}
-      }
-    }).then(function () {
+        color: req.params.color,
+        strengths: {like: '%' + req.params.category + '%'}
+        }
+    }).then(function (users) {
+
       res.json(users);
     });
   });
