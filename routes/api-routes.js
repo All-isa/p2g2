@@ -193,13 +193,16 @@ module.exports = function (app) {
 
   app.put("/api/strengths/:id", function (req, res) {
     console.log("strengths passed");
+    var cat = req.body.categories;
+
     db.User.update({
-      strengths: req.body.strengths
+      strengths: JSON.stringify(req.body.categories),
+      color: req.body.radio
     },
       {
         where: {
           id: req.params.id
-        }
+        },
       }).then(function (dbartist) {
         console.log("strengths");
         res.sendStatus(200);
@@ -207,6 +210,23 @@ module.exports = function (app) {
         console.log(err);
       });
   });
+
+  // app.put("/api/color/:id", function (req, res) {
+  //   console.log("colors passed");
+  //   db.User.update({
+  //     color: req.body.color,
+  //   },
+  //     {
+  //       where: {
+  //         id: req.params.id
+  //       },
+  //     }).then(function (dbartist) {
+  //       console.log("strengths");
+  //       res.sendStatus(200);
+  //     }).catch(function (err) {
+  //       console.log(err);
+  //     });
+  // });
 
 
   app.get("/api/search/:color/:category", function (req, res) {
