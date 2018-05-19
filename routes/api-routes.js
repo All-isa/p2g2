@@ -192,14 +192,14 @@ module.exports = function (app) {
   });
 
 
-  app.get("/api/search/:category", function (req, res) {
+  app.get("/api/search/:color/:category", function (req, res) {
     console.log(req.body);
     db.User.findAll({
       where: {
-        category: req.params.category,
-        color: req.params.color
-      }
-    }).then(function () {
+        color: req.params.color,
+        strengths: {like: '%' + req.params.category + '%'}
+        }
+    }).then(function (users) {
       res.json(users);
     });
   });
