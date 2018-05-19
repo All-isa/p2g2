@@ -68,8 +68,9 @@ $(document).ready(function () {
             data: {
               profilePicture: url
             }
-          }).then(function (data) {
+          }).then(function () {
             console.log("Profile picture submitted to database");
+            location.reload();
           });
 
         });
@@ -182,8 +183,14 @@ $(document).ready(function () {
               portfolio_9: artist.portfolio_9,
               portfolio_10: artist.portfolio_10
             }
-          }).then(function (data) {
-            console.log(data);
+          }).then(function () {
+            location.reload();
+            $(document).ready(function () {
+              setTimeout(function () {
+                $("#portfolio-link").trigger("click");
+              }, 10);
+
+            });
           });
           // .catch(function(err){
           // console.log(err);
@@ -194,55 +201,4 @@ $(document).ready(function () {
     );
 
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
-
