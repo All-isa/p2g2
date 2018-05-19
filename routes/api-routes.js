@@ -97,7 +97,7 @@ module.exports = function (app) {
         }
       }).then(function () {
         console.log("success");
-      req.session.passport.user.short_bio = req.body.short_bio;
+        req.session.passport.user.short_bio = req.body.short_bio;
         req.session.save(function (err) { console.log(err); });
         res.sendStatus(200);
       }).catch(function (err) {
@@ -231,14 +231,27 @@ module.exports = function (app) {
 
   app.get("/api/search/:color/:category", function (req, res) {
     console.log(req.body);
-    db.User.findAll({
-      where: {
-        color: req.params.color,
-        strengths: {like: '%' + req.params.category + '%'}
-        }
-    }).then(function (users) {
 
-      res.json(users);
-    });
+    if (req.params.color == 2) {       //if user choose "either", color does not matter
+      db.User.findAll({
+        where: {
+          // color: req.params.color,
+          strengths: { like: '%' + req.params.category + '%' }
+        }
+      }).then(function (users) {
+
+        res.json(users);
+      });
+    } else {
+      db.User.findAll({
+        where: {
+          color: req.params.color,
+          strengths: { like: '%' + req.params.category + '%' }
+        }
+      }).then(function (users) {
+
+        res.json(users);
+      });
+    };
   });
 };

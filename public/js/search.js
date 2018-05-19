@@ -15,12 +15,15 @@ $(document).ready(function () {
 
     $("#searchSubmit").on("click", function () {
 
-        color = $("input[name='radios']:checked").val();
-        category = $("input[name='category']:checked").val()
+        color = $("input[name='colorChoice']:checked").val();
+        category = $("input[name='category']:checked").val();
+        console.log(color);
         
         console.log(category);
         $.get("/api/search/" + color +"/"+ category).then(function (data) {
             console.log(data);
+            // data.strengths= JSON.parse(data.strengths);
+            console.log(data.strengths);
             //refer to results with data.property
         });
     });

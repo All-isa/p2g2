@@ -94,6 +94,7 @@ $(document).ready(function () {
     $.each(strengths, function (index, element) {
       if (element.checked === true) {
         strengthsArr.push(element.value);
+<<<<<<< Updated upstream
       }
     });
 
@@ -106,12 +107,27 @@ $(document).ready(function () {
     // strengthsArr = strengths.filter(":checked").map(function() {
     //   return this.value;
     // }).get();
+=======
+      };
+    });
+
+    $.each(radio, function (index, element) {
+      if (element.checked === true) {
+        radio = element.value ;
+      }
+    });
+    
+>>>>>>> Stashed changes
     console.log(strengthsArr);
     $.ajax("/api/strengths/" + artist.id, {
       type: "PUT",
       data: {
         radio: radio,
+<<<<<<< Updated upstream
         categories: strengthsArr
+=======
+       categories: strengthsArr
+>>>>>>> Stashed changes
       }
     }).then(function (data) {
       console.log(data);
