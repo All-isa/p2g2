@@ -93,7 +93,7 @@ $(document).ready(function () {
 
     $.each(strengths, function (index, element) {
       if (element.checked === true) {
-        strengthsArr.push(element.id);
+        strengthsArr.push(element.value);
       }
     });
 
