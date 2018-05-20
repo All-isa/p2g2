@@ -51,6 +51,33 @@
         </div>
     </nav>
     {{else}}
+
+    {{#if artist}}
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Local Ink</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">Explore</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/members">Settings</a>
+                </li>
+                {{!-- <li class="nav-item">
+                    <a class="nav-link" href="/logout">Log Out</a>
+                </li> --}}
+            </ul>
+        </div>
+    </nav>
+        {{else}}
+
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#">P2G2</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -74,6 +101,7 @@
             </ul>
         </div>
     </nav>
+        {{/if}}
     {{/if}} {{{ body }}}
 </body>
 
