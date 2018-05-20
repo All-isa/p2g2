@@ -68,16 +68,16 @@
         <div class="form-group">
           <textarea class="form-control" id="shortBio" rows="5"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" id="bioSave" data-toggle="modal" data-target="#myModal">Save</button>
+        <button type="submit" class="btn btn-primary" id="bioSave" data-toggle="modal" data-target="#bioModal">Save</button>
 
         <!-- Modal to alert upload of Bio-->
-        <div class="modal fade" id="myModal" role="dialog">
-          <div class="modal-dialog">
+        <div class="modal" id="bioModal" role="dialog">
+          <div class="modal-dialog modal-sm">
             <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">congratulations</h4>
+                {{!-- <button type="button" class="close" data-dismiss="modal">&times;</button> --}}
+                <h4 class="modal-title">Success!</h4>
               </div>
               <div class="modal-body">
                 <p>You've successfully uploaded a bio for your portfolio.</p>
@@ -211,8 +211,28 @@
 
       <div class="row" id="moveSave">
         <div class="container">
-          <button type="submit" class="btn btn-primary" id="saveStrengths">Save</button>
+          <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#Modal" id="saveStrengths">Save</button>
+                <!-- Modal -->
+        <div id="Modal" class="modal" role="dialog">
+          <div class="modal-dialog modal-sm">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                {{!-- <button type="button" class="close" data-dismiss="modal">&times;</button> --}}
+                <h4 class="modal-title">Success!</h4>
+              </div>
+              <div class="modal-body">
+                <p>You've successfully uploaded your strengths to your portfolio!</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            
         </div>
+            </div>
+          </div>
       </div>
     </div>
     
@@ -240,24 +260,26 @@
             <span id="tempFile">Choose file</span>
         </div>
         <!-- Modal to alert waiting period for image upload -->
-        <div class="modal fade" id="modalUpload" role="dialog">
-          <div class="modal-dialog">
+        <div class="modal" id="modalUpload" role="dialog">
+          <div class="modal-dialog modal-sm">
             <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-header">
                 {{!--
                 <button type="button" class="close" data-dismiss="modal">&times;</button> --}}
-                <h4 class="modal-title">Success</h4>
+                <h4 class="modal-title">Success!</h4>
               </div>
               <div class="modal-body">
                 <p>
-                  <h6>Please wait until the image preview has loaded before you upload the next photo.</h6>
+                  Please wait until the image preview has loaded before you upload the next photo.
                 </p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
             </div>
+          </div>
+        </div>
             </label>
           </div>
         </div>
