@@ -37,9 +37,9 @@ module.exports = function(app) {
     res.render("about", {user: req.user});
   });
 
-  app.get("/artist/:id", function(req, res) {
-    console.log("Artist API result is " + req.user);
-    res.render("artist", {user: req.user});
-  });
+  // app.get("/artist/:id", function(req, res) {
+  //   console.log("Artist API result is " + req.user);
+  //   res.render("artist", {user: req.user});
+  // });
 
 };

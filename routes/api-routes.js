@@ -230,7 +230,7 @@ module.exports = function (app) {
 
 
   app.get("/api/search/:color/:category", function (req, res) {
-    console.log(req.body);
+    // console.log(req.body);
 
     if (req.params.color == 2) {       //if user choose "either", color does not matter
       db.User.findAll({
@@ -240,7 +240,7 @@ module.exports = function (app) {
         }
       }).then(function (users) {
         console.log(users);
-        res.render("index", {users: users});
+        res.render("index", { users: users });
       });
     } else {
       db.User.findAll({
@@ -249,9 +249,22 @@ module.exports = function (app) {
           strengths: { like: '%' + req.params.category + '%' }
         }
       }).then(function (users) {
-
-        res.render("index", {users: res.users});
+        console.log(users);
+        res.render("index", { users: users });
       });
     };
+  });
+
+  app.get("/artist/:id", function (req, res) {
+    console.log("Artist API result is " + req.user);
+    db.User.findOne({
+      where: {
+        id: req.params.id,
+      }
+    }).then(function (data) {
+      console.log(data);
+      res.render("artist", { artist: data });
+    });
+    // res.render("artist", { user: req.user });
   });
 };
