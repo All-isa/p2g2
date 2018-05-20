@@ -570,3 +570,20 @@ margin-top: 30px;
 .marginTen {
   margin:10px;
 }
+
+.logoColor {
+  color: #c2b7b7;
+  font-family: 'Codystar', 'Lato', sans-serif;
+  font-weight: 200;
+  font-size: 40px;
+}
+
+.imgFix {
+  object-fit: cover;
+  width:250px;
+  height:250px;
+}
+
+.darkName {
+  color:#272727;
+}
