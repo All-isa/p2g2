@@ -62,70 +62,73 @@ module.exports = function (app) {
       portfolio_8: req.body.portfolio_8,
       portfolio_9: req.body.portfolio_9,
       portfolio_10: req.body.portfolio_10
-    },
-      {
-        where: {
-          id: req.params.id
-        }
-      }).then(function (dbartist) {
-        req.session.passport.user.portfolio_1 = req.body.portfolio_1;
-        req.session.passport.user.portfolio_2 = req.body.portfolio_2;
-        req.session.passport.user.portfolio_3 = req.body.portfolio_3;
-        req.session.passport.user.portfolio_4 = req.body.portfolio_4;
-        req.session.passport.user.portfolio_5 = req.body.portfolio_5;
-        req.session.passport.user.portfolio_6 = req.body.portfolio_6;
-        req.session.passport.user.portfolio_7 = req.body.portfolio_7;
-        req.session.passport.user.portfolio_8 = req.body.portfolio_8;
-        req.session.passport.user.portfolio_9 = req.body.portfolio_9;
-        req.session.passport.user.portfolio_10 = req.body.portfolio_10;
-        req.session.save(function (err) { console.log(err); });
-        res.sendStatus(200);
-        console.log("success");
-      }).catch(function (err) {
+    }, {
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbartist) {
+      req.session.passport.user.portfolio_1 = req.body.portfolio_1;
+      req.session.passport.user.portfolio_2 = req.body.portfolio_2;
+      req.session.passport.user.portfolio_3 = req.body.portfolio_3;
+      req.session.passport.user.portfolio_4 = req.body.portfolio_4;
+      req.session.passport.user.portfolio_5 = req.body.portfolio_5;
+      req.session.passport.user.portfolio_6 = req.body.portfolio_6;
+      req.session.passport.user.portfolio_7 = req.body.portfolio_7;
+      req.session.passport.user.portfolio_8 = req.body.portfolio_8;
+      req.session.passport.user.portfolio_9 = req.body.portfolio_9;
+      req.session.passport.user.portfolio_10 = req.body.portfolio_10;
+      req.session.save(function (err) {
         console.log(err);
       });
+      res.sendStatus(200);
+      console.log("success");
+    }).catch(function (err) {
+      console.log(err);
+    });
   });
 
   app.put("/api/bio/:id", function (req, res) {
 
     db.User.update({
       short_bio: req.body.short_bio
-    },
-      {
-        where: {
-          id: req.params.id
-        }
-      }).then(function () {
-        console.log("success");
-        req.session.passport.user.short_bio = req.body.short_bio;
-        req.session.save(function (err) { console.log(err); });
-        res.sendStatus(200);
-      }).catch(function (err) {
+    }, {
+      where: {
+        id: req.params.id
+      }
+    }).then(function () {
+      console.log("success");
+      req.session.passport.user.short_bio = req.body.short_bio;
+      req.session.save(function (err) {
         console.log(err);
-        // res.redirect("/members");
       });
+      res.sendStatus(200);
+    }).catch(function (err) {
+      console.log(err);
+      // res.redirect("/members");
+    });
   });
 
   app.put("/api/profilePic/:id", function (req, res) {
 
     db.User.update({
       profilePicture: req.body.profilePicture,
-    },
-      {
-        where: {
-          id: req.params.id
-        }
-      }).then(function () {
-        console.log("profile picture saved successfully");
+    }, {
+      where: {
+        id: req.params.id
+      }
+    }).then(function () {
+      console.log("profile picture saved successfully");
 
-        // location.replace(data);
-        req.session.passport.user.profilePicture = req.body.profilePicture;
-        req.session.save(function (err) { console.log(err); });
-        res.sendStatus(200);
-      }).catch(function (err) {
-
+      // location.replace(data);
+      req.session.passport.user.profilePicture = req.body.profilePicture;
+      req.session.save(function (err) {
         console.log(err);
       });
+      res.sendStatus(200);
+    }).catch(function (err) {
+
+      console.log(err);
+    });
   });
 
   // Route for logging user out
@@ -139,8 +142,7 @@ module.exports = function (app) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
-    }
-    else {
+    } else {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
@@ -167,8 +169,7 @@ module.exports = function (app) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
-    }
-    else {
+    } else {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
@@ -198,17 +199,16 @@ module.exports = function (app) {
     db.User.update({
       strengths: JSON.stringify(req.body.categories),
       color: req.body.radio
-    },
-      {
-        where: {
-          id: req.params.id
-        },
-      }).then(function (dbartist) {
-        console.log("strengths");
-        res.sendStatus(200);
-      }).catch(function (err) {
-        console.log(err);
-      });
+    }, {
+      where: {
+        id: req.params.id
+      },
+    }).then(function (dbartist) {
+      console.log("strengths");
+      res.sendStatus(200);
+    }).catch(function (err) {
+      console.log(err);
+    });
   });
 
   // app.put("/api/color/:id", function (req, res) {
@@ -232,27 +232,61 @@ module.exports = function (app) {
   app.get("/api/search/:color/:category", function (req, res) {
     // console.log(req.body);
 
-    if (req.params.color == 2) {       //if user choose "either", color does not matter
+    if (req.params.color == 2) { //if user choose "either", color does not matter
       db.User.findAll({
         where: {
           // color: req.params.color,
-          strengths: { like: '%' + req.params.category + '%' }
+          strengths: {
+            like: '%' + req.params.category + '%'
+          }
         }
       }).then(function (users) {
         console.log(users);
-        res.render("index", { users: users });
+        console.log(JSON.parse(users[0].dataValues.strengths));
+        var userArr = [];
+        for (var i = 0; i < users.length; i++) {
+          users[i].dataValues.strengths = JSON.parse(users[i].dataValues.strengths);
+          userArr.push(users[i].dataValues);
+        }
+        console.log(userArr);
+        res.render("index", {
+          users: userArr
+        });
+        // console.log(users.dataValues.strengths);
+        // var str = user.dataValues.strengths;
+        // JSON.parse(str);
+        // console.log(str);
+
+        res.render("index", {
+          users: usersArr
+        });
       });
     } else {
       db.User.findAll({
         where: {
           color: req.params.color,
-          strengths: { like: '%' + req.params.category + '%' }
+          strengths: {
+            like: '%' + req.params.category + '%'
+          }
         }
       }).then(function (users) {
+        // console.log(users.strengths);
         console.log(users);
-        res.render("index", { users: users });
+        console.log(JSON.parse(users[0].dataValues.strengths));
+        var userArr = [];
+        for (var i = 0; i < users.length; i++) {
+          users[i].dataValues.strengths = JSON.parse(users[i].dataValues.strengths);
+          userArr.push(users[i].dataValues);
+        }
+        console.log(userArr);
+        res.render("index", {
+          users: userArr
+        });
+        // var str = users.strengths;
+        // JSON.parse({str});
+        // console.log(str);
       });
-    };
+    }
   });
 
   app.get("/artist/:id", function (req, res) {
@@ -263,7 +297,9 @@ module.exports = function (app) {
       }
     }).then(function (data) {
       console.log(data);
-      res.render("artist", { artist: data });
+      res.render("artist", {
+        artist: data
+      });
     });
     // res.render("artist", { user: req.user });
   });
