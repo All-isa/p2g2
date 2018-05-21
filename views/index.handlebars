@@ -150,7 +150,9 @@
                     {{else}}
                     <span class="badge badge-pill">Black & White</span>
                     {{/if}}
-                    <span class="badge badge-pill">{{this.strengths}}</span>
+                    {{#each this.strengths}}
+                    <span class="badge badge-pill">{{this}}</span>
+                    {{/each}}
                 </div>
             </div>
 
