@@ -285,6 +285,9 @@ module.exports = function (app) {
         // var str = users.strengths;
         // JSON.parse({str});
         // console.log(str);
+      }).catch(function (err) {
+        console.log(err);
+        res.render("index");
       });
     }
   });
