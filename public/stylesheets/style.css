@@ -587,3 +587,28 @@ margin-top: 30px;
 .darkName {
   color:#272727;
 }
+
+.modal-content {
+  background: rgb(48, 48, 48);
+  font: white;
+  font-family: 'arial';
+}
+
+.modal-body {
+  font: white;
+  font-family: 'arial';
+}
+
+#modalBtn {
+  background: rgb(59, 59, 59);
+  font: rgb(48, 48, 48);
+  font-family: 'arial';
+}
+
+#modalBody {
+  font-family: 'arial';
+}
+
+#bioModal {
+  font-family: 'arial';
+}
