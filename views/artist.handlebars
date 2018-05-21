@@ -16,9 +16,9 @@
                     {{else}}
                     <span class="badge badge-pill">Black & White</span>
                     {{/if}}
-                    <span class="badge badge-pill">American Traditional</span>
-                    <span class="badge badge-pill">Realism</span>
-                    <span class="badge badge-pill">Lettering</span>
+                    {{#each artist.strengths}}
+                    <span class="badge badge-pill">{{this}}</span>
+                    {{/each}}
                 </div>
             </div>
             <div id="contact">

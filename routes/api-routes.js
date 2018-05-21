@@ -257,9 +257,9 @@ module.exports = function (app) {
         // JSON.parse(str);
         // console.log(str);
 
-        res.render("index", {
-          users: usersArr
-        });
+        // res.render("index", {
+        //   users: userArr
+        // });
       });
     } else {
       db.User.findAll({
@@ -296,9 +296,18 @@ module.exports = function (app) {
         id: req.params.id,
       }
     }).then(function (data) {
-      console.log(data);
+      // console.log(data);
+      console.log(data.dataValues);
+      console.log(JSON.parse(data.dataValues.strengths));
+      // var dataArr = [];
+      //   for (var i = 0; i < data.length; i++) {
+          data.dataValues.strengths = JSON.parse(data.dataValues.strengths);
+      //     dataArr.push(data[i].dataValues);
+      //   }
+      //   console.log(dataArr);
+    // }
       res.render("artist", {
-        artist: data
+        artist: data.dataValues
       });
     });
     // res.render("artist", { user: req.user });
