@@ -41,7 +41,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     profilePicture: {
       type: DataTypes.STRING,
-      defaultValue: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI_UrA4KamQurKaNVZZmgdEjRD8A7yADqDfllUhP0T_1VZWDMI)"
+      defaultValue: "images/profileDefault-230.png)"
     },
     short_bio: {
       type: DataTypes.STRING
